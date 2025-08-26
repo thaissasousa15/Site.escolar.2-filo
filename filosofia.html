@@ -1,0 +1,253 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filosofia: Pensando o Mundo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://img.freepik.com/fotos-gratis/pilha-de-livros-e-ampulheta-na-mesa-com-fundo-de-quadro-negro_123827-23388.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    header {
+      background-color: #4b2c86;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 10px;
+    }
+
+    .introducao {
+      background-color: #4b2c86;
+      color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .card {
+      background-color: #7a56c2;
+      color: white;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .card-topico {
+      background-color: #f1f1f1;
+      border-left: 5px solid #4b2c86;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    .card-topico img {
+      margin-top: 10px;
+    }
+
+    .quiz, .curiosidade {
+      margin-top: 40px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4b2c86;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .quiz-container {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .quiz-buttons button {
+      display: block;
+      margin: 10px auto;
+      background-color: #6c4db9;
+    }
+
+    footer {
+      background-color: #4b2c86;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Filosofia: Pensando o Mundo</h1>
+  </header>
+
+  <main>
+    <!-- Introdução -->
+    <section class="introducao">
+      <h2>Introdução à Filosofia</h2>
+      <p>A Filosofia é o estudo das questões fundamentais da existência, do conhecimento, da verdade, da moral e da mente. Ela nos convida a pensar criticamente e a refletir sobre a vida, o universo e a sociedade.</p>
+      <div class="card">
+        <h3>Depoimento do Professor Jovan Batista</h3>
+        <p>"Os motivos que me levaram a fazer Filosofia foram o desejo de compreender assuntos religiosos, explorar concepções sobre cosmogonia e cosmologia e, principalmente, refletir sobre aspectos éticos, políticos e sociais. A Filosofia oferece uma lente crítica e profunda para entender a existência humana e suas relações com o mundo."</p>
+      </div>
+    </section>
+
+    <!-- Filósofos -->
+    <section class="topicos">
+      <h2>Filósofos Famosos</h2>
+      <div class="card-topico">
+        <h3>Sócrates</h3>
+        <p>Considerado o pai da Filosofia Ocidental. Defendia o autoconhecimento e o questionamento constante. Seu método dialético ainda é usado no ensino moderno.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Socrates_Louvre.jpg" width="250" height="200">
+      </div>
+      <div class="card-topico">
+        <h3>Friedrich Nietzsche</h3>
+        <p>Filósofo alemão conhecido pela crítica à moral tradicional e à religião. Criador dos conceitos de “vontade de poder”, “além-do-homem” e “eterno retorno”.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Nietzsche1882.jpg" width="250" height="200">
+      </div>
+    </section>
+
+    <!-- Tópicos Filosóficos -->
+    <section class="topicos">
+      <h2>Tópicos Filosóficos</h2>
+      <div class="card-topico">
+        <h3>Ética</h3>
+        <p>A ética investiga o que é o bem, o mal, o certo e o errado. É a base das discussões morais e do comportamento humano na sociedade.</p>
+      </div>
+      <div class="card-topico">
+        <h3>Epistemologia</h3>
+        <p>É a teoria do conhecimento. Questiona como sabemos o que sabemos e os limites da razão e da experiência.</p>
+      </div>
+      <div class="card-topico">
+        <h3>Filosofia Política</h3>
+        <p>Estuda o poder, o Estado, a liberdade, a justiça e os direitos. Tem impacto direto sobre a sociedade e a democracia.</p>
+      </div>
+      <div class="card-topico">
+        <h3>Existencialismo</h3>
+        <p>Filosofia que valoriza a liberdade individual e a responsabilidade pelas escolhas. Foca no sentido da vida e na existência humana.</p>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="quiz">
+      <h2>Quiz de Filosofia</h2>
+      <button id="startQuizBtn">Começar o Quiz</button>
+      <div class="quiz-container" id="quizContainer">
+        <p id="quizQuestion"></p>
+        <div id="quizButtons" class="quiz-buttons"></div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="curiosidade">
+      <h2>Curiosidades Filosóficas</h2>
+      <button id="curiosidadeBtn">Clique para ver uma curiosidade</button>
+      <p id="curiosidade"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Filosofia — Inspirado nos professores Jovan Batista e na eterna Gizelia Rodrigues <br>
+    Criado por Thaíssa Marinho e João Paulo Alves.</p>
+  </footer>
+
+  <script>
+    const quizPerguntas = [
+      { pergunta: "Quem disse a frase 'Só sei que nada sei'?", respostas: ["Aristóteles", "Platão", "Sócrates", "Descartes"], resposta: "Sócrates" },
+      { pergunta: "Qual filósofo escreveu 'Assim Falou Zaratustra'?", respostas: ["Kant", "Nietzsche", "Hegel", "Marx"], resposta: "Nietzsche" },
+      { pergunta: "O que estuda a Ética?", respostas: ["A origem do universo", "O comportamento moral", "A verdade absoluta", "As leis naturais"], resposta: "O comportamento moral" },
+      { pergunta: "Qual ramo filosófico estuda o conhecimento?", respostas: ["Metafísica", "Epistemologia", "Lógica", "Estética"], resposta: "Epistemologia" },
+      { pergunta: "Quem é considerado o pai da Filosofia Moderna?", respostas: ["Descartes", "Sócrates", "Aristóteles", "Kant"], resposta: "Descartes" }
+    ];
+
+    let questionIndex = 0;
+    let correctAnswers = 0;
+
+    const startQuizBtn = document.getElementById('startQuizBtn');
+    const quizContainer = document.getElementById('quizContainer');
+    const quizQuestion = document.getElementById('quizQuestion');
+    const quizButtons = document.getElementById('quizButtons');
+    const curiosidadeBtn = document.getElementById('curiosidadeBtn');
+    const curiosidadeText = document.getElementById('curiosidade');
+
+    startQuizBtn.addEventListener('click', function () {
+      startQuizBtn.style.display = 'none';
+      quizContainer.style.display = 'block';
+      showQuestion();
+    });
+
+    function showQuestion() {
+      const currentQuestion = quizPerguntas[questionIndex];
+      quizQuestion.innerText = currentQuestion.pergunta;
+      quizButtons.innerHTML = '';
+
+      currentQuestion.respostas.forEach(function (resposta) {
+        const button = document.createElement('button');
+        button.textContent = resposta;
+        button.addEventListener('click', function () {
+          checkAnswer(resposta);
+        });
+        quizButtons.appendChild(button);
+      });
+    }
+
+    function checkAnswer(resposta) {
+      const currentQuestion = quizPerguntas[questionIndex];
+      if (resposta === currentQuestion.resposta) {
+        correctAnswers++;
+      }
+      questionIndex++;
+      if (questionIndex < quizPerguntas.length) {
+        showQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      quizQuestion.innerText = `Você acertou ${correctAnswers} de ${quizPerguntas.length} questões!`;
+      quizButtons.innerHTML = '';
+    }
+
+    curiosidadeBtn.addEventListener('click', function () {
+      const curiosidades = [
+        "A palavra 'filosofia' vem do grego e significa 'amor à sabedoria'.",
+        "Sócrates não deixou nenhum escrito; tudo o que sabemos dele vem de Platão e outros autores.",
+        "Nietzsche escreveu grande parte de sua obra enquanto sofria de problemas de saúde mental.",
+        "René Descartes criou o método cartesiano e disse: 'Penso, logo existo'.",
+        "Aristóteles foi tutor de Alexandre, o Grande."
+      ];
+
+      const randomIndex = Math.floor(Math.random() * curiosidades.length);
+      curiosidadeText.innerText = curiosidades[randomIndex];
+    });
+  </script>
+
+</body>
+</html>
+
